@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       authorized_user = User.authenticate(params[:users][:username], params[:users][:password])
       session[:user_id] = authorized_user.id
 
-      redirect_to :controller => 'home', :action => 'profile'
+      redirect_to :controller => 'users', :action => 'profile'
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"

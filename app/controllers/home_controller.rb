@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @user = User.new
   end
 
+  def browse
+    @works = Work.all
+  end
+
   def settings
   end
 

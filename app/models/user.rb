@@ -41,11 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search
-      where('tags LIKE ?', "%#{search}%")
-    else
-      find(:all)
-    end
+    where('tags LIKE ?', "%#{search}%")
   end
 
 end

@@ -6,7 +6,7 @@ class WorksController < ApplicationController
     if @work.save
       flash[:notice] = "You created work successfully"
       flash[:color]= "valid"
-      redirect_to :controller => 'home', :action => 'profile'
+      redirect_to :controller => 'users', :action => 'profile'
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"

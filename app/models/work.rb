@@ -5,17 +5,8 @@ class Work < ActiveRecord::Base
   attr_accessible :title, :url, :description, :user_id, :tags
 
 
-
-
-
   def self.search(search)
-    if search
-      where('tags LIKE ?', "%#{search}%")
-    else
-      find(:all)
-    end
+    where('tags LIKE ?', "%#{search}%")
   end
-
-
 
 end

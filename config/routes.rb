@@ -12,6 +12,8 @@ Finder::Application.routes.draw do
   get '/search_results', to: 'home#search_results'
   get '/work_detail/:id', to: 'home#work_detail'
 
+  get '/browse', to: 'home#browse'
+
   post '/works/create', to: 'works#create'
 
   post "login", :to => "home#login"

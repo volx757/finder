@@ -1,0 +1,19 @@
+<h1>Search</h1>
+
+<p>Search by tag. Enter as many as you want, separated by commas (i.e. 'house, trap, sex')</p>
+<%= form_tag search_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
+
+<p>Search by status and city</p>
+<%= form_tag search_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :status, params[:status] %>
+      <%= text_field_tag :city, params[:city] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>

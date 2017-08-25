@@ -1,0 +1,36 @@
+html, body {
+  background: beige;
+  height: 100%;
+  width: 100%;
+}
+
+
+nav {
+  background: black;
+  height: 60px;
+  ul {
+    li {
+      display: inline-block;
+      margin: 0 20px;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.pageWrapper {
+
+  &.index {
+    h1 {
+      text-align: center;
+    }
+    .contentBox {
+      width: 40%;
+      display: inline-block;
+      margin: 0 2.5%;
+      vertical-align: top;
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+<div class="pageWrapper index">
+
+  <h1>Musician Finder: find a like-minded musician to create with.</h1>
+
+  <div class="contentBox">
+    <h1>Sign Up</h1>
+    <%= form_for(:users, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+        <p> Username:</br> <%= f.text_field :username%> </p>
+        <p> Email:</br> <%= f.text_field :email%> </p>
+        <p> Password:</br> <%= f.password_field :password%></p>
+        <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+        <%= f.submit :Signup %>
+    <% end %>
+    <% if @user.errors.any? %>
+        <ul class="Signup_Errors">
+          <% for message_error in @user.errors.full_messages %>
+              <li>* <%= message_error %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div><div class= "contentBox">
+    <h1>Log in</h1>
+    <%= form_tag(:action => 'login') do %>
+        <p>
+          Username or Email:</br> <%= text_field_tag(:username_or_email) %>
+        </p>
+
+        <p>
+          Password:</br> <%= password_field_tag :login_password %>
+        </p>
+
+        <%= submit_tag("Log In") %>
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<h2 class='User_Header'><%= @current_user.username %>'s Profile </h2>
+
+<p>User info:</p>
+<div><%= @current_user.city %> </div>
+<div><%= @current_user.status %> </div>
+<div><%= @current_user.bio %> </div>
+
+<br>
+<% @current_user.works.each do |w| %>
+    <%= w.title %>
+    <iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/339378195%3Fsecret_token%3Ds-yG4K3&amp;color=00aabb&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>
+    <br>
+<% end %>
+
+<div class="Sign_Form">
+  <h1>Add project</h1>
+  <%= form_for(:works, :url => {:controller => 'works', :action => 'create'}) do |f| %>
+      <p> Title:</br> <%= f.text_field :title %> </p>
+      <p> URL:</br> <%= f.text_field :url %> </p>
+      <p> desc:</br> <%= f.text_field :description %></p>
+      <p> tags:</br> <%= f.text_field :tags %></p>
+      <%= f.text_field :user_id, :hidden => true, :value => @current_user.id %>
+      <%= f.submit :add_work %>
+  <% end %>
+  <% if @work.errors.any? %>
+      <ul class="Signup_Errors">
+        <% for message_error in @work.errors.full_messages %>
+            <li>* <%= message_error %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>

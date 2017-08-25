@@ -1,0 +1,22 @@
+<h2 class='User_Header'><%= @current_user.username %> Profile </h2>
+
+<div><%= @current_user.status %> </div>
+<div><%= @current_user.bio %> </div>
+
+<%= form_for(:users, :url => {:controller => 'users', :action => 'update'}) do |f| %>
+    <p> Username:</br> <%= f.text_field :username %> </p>
+    <p> Email:</br> <%= f.text_field :email %> </p>
+    <p> Bio:</br> <%= f.text_field :bio %> </p>
+    <p> City:</br> <%= f.text_field :city %> </p>
+    <p> Status:</br> <%= f.text_field :status %> </p>
+    <p> Password:</br> <%= f.password_field :password %></p>
+    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
+    <%= f.submit :update %>
+<% end %>
+<% if @current_user.errors.any? %>
+    <ul class="Signup_Errors">
+      <% for message_error in @current_user.errors.full_messages %>
+          <li>* <%= message_error %></li>
+      <% end %>
+    </ul>
+<% end %>

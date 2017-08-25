@@ -1,9 +1,9 @@
 <h2 class='User_Header'><%= @current_user.username %>'s Profile </h2>
 
 <p>User info:</p>
-<div><%= @current_user.city %> </div>
-<div><%= @current_user.status %> </div>
-<div><%= @current_user.bio %> </div>
+<div>City: <%= @current_user.city %> </div>
+<div>Collab Status: <%= @current_user.status %> </div>
+<div>Bio: <%= @current_user.bio %> </div>
 
 <br>
 <% @current_user.works.each do |w| %>

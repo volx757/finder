@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if @current_user.save
       flash[:notice] = "You updated successfully"
       flash[:color]= "valid"
-      redirect_to :controller => 'home', :action => 'profile'
+      redirect_to :controller => 'users', :action => 'profile'
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"

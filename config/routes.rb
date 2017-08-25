@@ -13,6 +13,7 @@ Finder::Application.routes.draw do
   get '/work_detail/:id', to: 'home#work_detail'
 
   get '/browse', to: 'home#browse'
+post '/users/update', to: 'users#update'
 
   post '/works/create', to: 'works#create'
 
